@@ -281,7 +281,6 @@ Trois colonnes distinctes, à ne pas confondre :
 | Écrou de blocage (frein) M8 | 1 | Lot | 10,99 € | **10,99 €** | Amazon | ⚠️ Lien à corriger |
 | | | | **Sous-total** | **10,99 €** | | |
 
-> ⚠️ **Lien erroné à corriger.** Dans mes notes d'origine, cette ligne pointe vers `B0CJ28LJPW`, qui est **la même référence produit que le kit de visserie M3** de la section précédente (à un prix différent, 10,99 € contre 14,88 €). Une des deux URL est un copier-coller malencontreux. Le montant payé est conservé ; le lien doit être retrouvé sur la facture.
 
 #### 4.2.7 Inserts thermofixés
 
@@ -364,11 +363,6 @@ Ces moteurs ont été commandés en suivant le tutoriel Instructables. **Ils ne 
 | Ventilateurs 50 × 50 × 10 mm | 2 (lot) | Refroidissement ponctuel | 3,39 € | **6,79 €** | Amazon | [B0CTMPNKV8](https://www.amazon.fr/dp/B0CTMPNKV8) |
 | | | | **Sous-total** | **260,54 €** | | |
 
-> **Sur les 4 TB6560 :** quatre ont été achetés, tous ne sont pas utilisés sur le bras final. Garder un driver de rechange est un bon investissement — quand un moteur ne tourne pas, pouvoir échanger le driver en 30 secondes élimine immédiatement une hypothèse de diagnostic. C'est exactement ce qui a permis d'isoler le problème DM542T décrit en [§11](#11-journal-des-pannes).
->
-> **Sur les 2 DM542T :** achetés pour remplacer les TB6600 sur l'épaule, ils n'ont jamais fait tourner un moteur. Ils sont comptés dans la dépense réelle, mais un builder qui refait le projet peut s'en passer et rester sur les TB6600. Voir [§6.5](#65-dm542t--panne-non-résolue).
->
-> **Sur le prix de l'Arduino Mega :** 49,19 € correspond à une carte officielle. Un clone compatible se trouve autour de 15–20 € et fonctionne parfaitement pour cet usage. C'est le poste le plus facilement compressible de toute la nomenclature.
 
 ---
 
