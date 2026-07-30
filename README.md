@@ -120,31 +120,23 @@ Une RAMPS 1.4 pilote nativement cinq axes : `X`, `Y`, `Z`, `E0` et `E1` (les deu
 
 ### Schéma de câblage
 
-Le schéma de lalimentations de driveur :
-
+Le schéma de l'alimentation des drivers :
 <img width="3529" height="2245" alt="Shema_branchement - Page 1" src="https://github.com/user-attachments/assets/041aba9b-2a42-440e-827b-9f0b2f2cb784" />
 
-Le shéma de cablage de l'axe X avec le (17HS13-0404S1) :
-
+Le schéma de câblage de l'axe X avec le (17HS13-0404S1) :
 <img width="1531" height="1880" alt="Diagramme vierge (3)" src="https://github.com/user-attachments/assets/1f1ad59b-ce78-4137-8293-e2dcba2a8de5" />
 
-Le shéma de cablage de l'axe Y avec le (17HS24-2104S-PG5) :
-
+Le schéma de câblage de l'axe Y avec le (17HS24-2104S-PG5) :
 <img width="1856" height="2414" alt="Diagramme vierge (9)" src="https://github.com/user-attachments/assets/f457bfa9-1010-4160-83f0-104f6f00617f" />
 
-Le shéma de cablage de l'axe Z avec le (23HS45-4204S) :
-
+Le schéma de câblage de l'axe Z avec le (23HS45-4204S) :
 <img width="1831" height="2414" alt="Diagramme vierge (11)" src="https://github.com/user-attachments/assets/5acf17f7-8143-4864-ac61-6b9853d0ae7f" />
 
-Le shéma de cablage de l'axe E0 avec le (17HS24-0644S) :
-
+Le schéma de câblage de l'axe E0 avec le (17HS24-0644S) :
 <img width="1856" height="2414" alt="Diagramme vierge (8)" src="https://github.com/user-attachments/assets/99e8b656-0455-4a4c-9029-ee06907c3e92" />
 
-
-Le shéma de cablage de l'axe E1 avec le (14HS13-0804S) :
-
+Le schéma de câblage de l'axe E1 avec le (14HS13-0804S) :
 <img width="1531" height="1880" alt="Diagramme vierge (5)" src="https://github.com/user-attachments/assets/ccd135a1-64cc-4aff-b5c1-ca4251551945" />
-
 
 
 ### 3.2 Six moteurs pas-à-pas pour cinq axes
@@ -202,266 +194,198 @@ USB (Arduino Mega 2560) ◄──── PC (Pronterface)
 
 ---
 
-## 4. Nomenclature et coûts
+# Nomenclature réelle et coûts — BCN3D MOVEO
 
-### 4.1 Comment lire ces tableaux
+Cette nomenclature remplace celle du dépôt d'origine (prix McMaster-Carr / BRECOflex en USD, difficilement accessibles depuis l'Europe). Elle liste **ce qu'il faut réellement commander depuis la France**, avec les quantités du BOM officiel, les quantités réellement livrées (les visseries et roulements se vendent par lots), les prix payés en euros TTC et **le lien vers chaque produit commandé**.
 
-Cette section est **la plus soignée du dépôt**, parce que c'est celle qui a le plus de valeur pour quelqu'un qui veut refaire le projet : une nomenclature théorique se trouve partout, une nomenclature avec les prix réellement payés et les pièges d'approvisionnement, beaucoup moins.
+> **Lisez les parties 1 à 3 pour construire le bras.**
+> La partie 4 est un simple retour d'expérience sur des achats inutiles de mon côté : elle n'entre **pas** dans le budget de construction.
 
-Trois colonnes distinctes, à ne pas confondre :
-
-| Colonne | Signification |
-|---|---|
-| **Qté requise** | Nombre de pièces effectivement utilisées sur le bras |
-| **Conditionnement** | Ce qui a réellement été acheté. La plupart des pièces se vendent par lot : commander 3 roulements coûte le prix d'un lot de 10 |
-| **Prix unitaire** | Prix par pièce du lot acheté |
-| **Montant payé** | **La dépense réelle.** C'est cette colonne, et seulement celle-là, qui est additionnée dans les totaux |
-
-> ⚠️ **Conséquence :** `Qté requise × Prix unitaire ≠ Montant payé` sur la majorité des lignes. Ce n'est pas une erreur de calcul, c'est le surplus de conditionnement. Il est parfaitement normal de finir avec 7 roulements 3 × 10 × 4 mm en trop.
-
-**Conversion de devises.** Certains articles ont été commandés sur `amazon.com` (États-Unis) et facturés en **dollars**. Ils sont marqués 🇺🇸 dans les tableaux. Les montants sont reportés tels qu'affichés sur la facture d'origine ; le total en euros est donc **légèrement approximatif** pour ces lignes. Une révision de la nomenclature devrait basculer ces références sur `amazon.fr` ou un équivalent européen.
-
-**Vérification arithmétique.** Tous les sous-totaux et le total général de ce document ont été **recalculés ligne par ligne**. Le total annoncé dans mes notes initiales (579,37 €) était obsolète ; l'écart est expliqué en [§4.6](#46-anomalies-relevées-et-corrections-apportées).
+> ⓘ Les liens pointent vers les références exactes que j'ai reçues. Les listings Amazon disparaissent avec le temps : les caractéristiques sont donc toujours indiquées à côté, pour pouvoir prendre un équivalent.
 
 ---
 
-### 4.2 Mécanique
+## 1. Nomenclature détaillée par catégorie
 
-#### 4.2.1 Roulements
+### 1.1 Moteurs
 
-| Référence | Qté requise | Conditionnement | Prix unitaire | Montant payé | Fournisseur | Lien |
-|---|---|---|---|---|---|---|
-| Roulement 8 × 22 × 7 mm | 10 | Lot de 20 | 0,39 € | **7,99 €** | Amazon | [B0D7YTRG6R](https://www.amazon.fr/dp/B0D7YTRG6R) |
-| Roulement 5 × 16 × 5 mm | 8 | Lot de 10 | 0,88 € | **8,80 €** | Amazon | [B0D5XNGQKR](https://www.amazon.fr/dp/B0D5XNGQKR) |
-| Roulement 4 × 13 × 5 mm | 9 | Lot de 10 | 0,92 € | **9,20 €** | Amazon | [B097TVMZ1L](https://www.amazon.fr/dp/B097TVMZ1L) |
-| Roulement 3 × 10 × 4 mm | 3 | Lot de 10 | 0,91 € | **9,10 €** | Amazon | [B0DCNRFZRG](https://www.amazon.fr/dp/B0DCNRFZRG) |
-| | | | **Sous-total** | **35,09 €** | | |
+| Repère MOVEO | Modèle retenu | Qté BOM | Qté achetée | PU | Total | Lien |
+|---|---|---:|---:|---:|---:|---|
+| Épaule (×2, câble en Y) | NEMA 23 — `23HS45-4204S` (3 Nm, 4,2 A crête, 57×57×113 mm) | 2 | 2 | 32,16 € | 64,32 € | [StepperOnline](https://www.omc-stepperonline.com/nema-23-bipolar-3nm-425oz-in-4-2a-57x57x114mm-4-wires-stepper-motor-cnc-23hs45-4204s) |
+| Coude (réducteur) | NEMA 17 + planétaire 5,18:1 — `17HS24-2104S-PG5` (2,1 A) | 1 | 1 | 35,26 € | 35,26 € | StepperOnline — réf. `17HS24-2104S-PG5` |
+| Base / rotation | NEMA 17 long — `17HS24-0644S` (60 Ncm, 0,64 A) | 1 | 1 | 12,98 € | 12,98 € | StepperOnline — réf. `17HS24-0644S` |
+| Articulation coude | NEMA 17 — `17HS13-0404S` (26 Ncm, 0,4 A) | 1 | 1 | 8,31 € | 8,31 € | StepperOnline — réf. `17HS13-0404S` |
+| Poignet | NEMA 14 — `14HS13-0804S` (18 Ncm, 0,8 A) | 1 | 1 | 8,31 € | 8,31 € | StepperOnline — réf. `14HS13-0804S` |
+| Pince | Servo Hitec HS-645MG | 1 | 1 | 29,94 € | 29,94 € | [Amazon.com](https://www.amazon.com/dp/B003T6RSVQ) |
+| | | | | **Sous-total** | **159,12 €** | |
 
-> Les roulements 8 × 22 × 7 mm sont ceux qu'on consomme le plus : ils servent aux articulations **et** aux tendeurs de courroie (3 par tendeur, empilés). Prévoir large.
+Sur [omc-stepperonline.com](https://www.omc-stepperonline.com), tapez la référence (`17HS24-2104S-PG5`, etc.) dans la barre de recherche : les URL de fiches produit changent régulièrement, la référence non. **Choisissez impérativement l'entrepôt Allemagne** au moment de la commande (voir partie 2).
 
-#### 4.2.2 Tiges et arbres
+> ⚠️ **Le point le plus important de ce BOM.** Le BOM d'origine spécifie des NEMA 23 de 1,26 Nm et un NEMA 17 5:1 basé sur un moteur 0,4 A. **C'est sous-dimensionné.** L'épaule décroche en charge et le coude perd des pas à la remontée. Partez directement sur les modèles ci-dessus (3 Nm à l'épaule, version 2,1 A du planétaire au coude).
 
-| Référence | Qté requise | Conditionnement | Prix unitaire | Montant payé | Fournisseur | Lien |
-|---|---|---|---|---|---|---|
-| Tige filetée M8 × 40 mm | 1 | Lot de 4 | 1,57 € | **6,29 €** | Amazon | [B0D46N4XJJ](https://www.amazon.fr/dp/B0D46N4XJJ) |
-| Tige d'acier ⌀8 mm × 200 mm | 2 | 2 pièces | 4,29 € | **8,59 €** 🇺🇸 | Amazon US | [B0BQBX718N](https://www.amazon.com/dp/B0BQBX718N) |
-| | | | **Sous-total** | **14,88 €** | | |
+### 1.2 Drivers et commande
 
-> 🔁 **Doublon retiré.** Ma nomenclature d'origine listait une seconde fois les tiges d'acier ⌀8 × 200 mm dans une rubrique « Tiges en acier » distincte, à 7,39 €, avec la même référence produit `B0BQBX718N`. Il s'agissait du même achat compté deux fois. Voir [§4.6](#46-anomalies-relevées-et-corrections-apportées).
+| Élément | Affectation | Qté BOM | Qté achetée | PU | Total | Lien |
+|---|---|---:|---:|---:|---:|---|
+| Driver DM542T (1,0–4,5 A, 18–50 VDC) | épaule ×2 (un par NEMA 23) | — | 2 | 21,58 € | 43,15 € | StepperOnline — réf. `DM542T` |
+| Driver TB6600 Hailege 4 A (9–40 V) | coude + poignet | — | 2 | 14,99 € | 29,98 € | [Amazon.fr](https://www.amazon.fr/dp/B07YJD5QZ9) |
+| Driver TB6560 DollaTek 3 A (10–35 V) | base + articulation coude | — | 2 | 11,99 € | 23,98 € | [Amazon.fr](https://www.amazon.fr/dp/B07DK7CZK3) |
+| Arduino Mega 2560 REV3 | contrôleur | 1 | 1 | 51,76 € | 51,76 € | [Amazon.fr](https://www.amazon.fr/dp/B0046AMGW0) |
+| Shield RAMPS 1.4 (ARCELI) | interface | 1 | 1 | 9,99 € | 9,99 € | [Amazon.fr](https://www.amazon.fr/dp/B07BSRS9WS) |
+| Câble USB A/B 1,8 m | liaison PC | — | 1 | 6,08 € | 6,08 € | [Amazon.fr](https://www.amazon.fr/dp/B07L4KTXQR) |
+| | | | | **Sous-total** | **164,94 €** | |
 
-#### 4.2.3 Courroies
+Le BOM d'origine prévoit 5 DRV8825 sur la RAMPS. Ici les 6 moteurs sont pilotés par **6 drivers externes**, la RAMPS ne servant plus que de générateur de signaux STEP/DIR/ENABLE.
 
-| Référence | Qté requise | Conditionnement | Prix unitaire | Montant payé | Fournisseur | Lien |
-|---|---|---|---|---|---|---|
-| Courroie crantée T5, 5 m au mètre | 1 rouleau | Rouleau 500 cm | 36,88 € | **36,88 €** 🇺🇸 | Amazon US | [B07NRY8C6X](https://www.amazon.com/dp/B07NRY8C6X) |
-| | | | **Sous-total** | **36,88 €** | | |
+> ⚠️ Certains TB6560 ont une **logique ENABLE inversée** : câblez EN− sur la sortie ENABLE de la RAMPS et EN+ sur GND, sinon le moteur reste bloqué.
 
-> 🔁 **Doublon retiré.** Cette courroie apparaissait deux fois dans mes notes, sous deux rubriques différentes (« Ceintures » à 36,88 € et « Courroie de distribution » à 31,74 €), avec la **même référence produit** `B07NRY8C6X`. Un seul rouleau a été acheté. L'écart de prix entre les deux lignes s'explique probablement par une variation du prix Amazon entre deux consultations. La valeur retenue est **36,88 €**, celle de la facture.
->
-> 💡 Un rouleau de 5 m est largement suffisant pour l'ensemble des articulations : voir [§9](#9-longueurs-de-courroies) pour le détail des longueurs.
+### 1.3 Alimentation et refroidissement
 
-#### 4.2.4 Accouplements
+| Élément | Qté BOM | Qté achetée | PU | Total | Lien |
+|---|---:|---:|---:|---:|---|
+| Alimentation 220 VAC → 24 VDC, 25 A / 600 W | 1 (240 W au BOM) | 1 | 29,99 € | 29,99 € | [Amazon.fr](https://www.amazon.fr/dp/B0CX57S8KS) |
+| Convertisseur abaisseur LM2596 24 V → 12 V (alim logique RAMPS) | — | 1 | 5,00 € | 5,00 € | achat local — module LM2596 réglable |
+| Câble secteur 230 V 16 A, 2 m, embouts | — | 1 | 9,79 € | 9,79 € | générique — vendeur *Spy-Earpiece* |
+| Ventilateurs 24 V 50×50×10 mm (lot de 2) | — | 1 lot | 6,79 € | 6,79 € | générique — réf. *JZK 5010-24* |
+| Ventilateur 24 V Sunon 80×80×25 mm | — | 1 | 8,22 € | 8,22 € | [Amazon.fr](https://www.amazon.fr/dp/B07B665FMH) |
+| | | | **Sous-total** | **59,79 €** | |
 
-| Référence | Qté requise | Conditionnement | Prix unitaire | Montant payé | Fournisseur | Lien |
-|---|---|---|---|---|---|---|
-| Accouplement d'arbre 5 mm → 8 mm | 1 | Lot de 2 | 3,99 € | **7,98 €** | Amazon | [B096G1GZH5](https://www.amazon.fr/dp/B096G1GZH5) |
-| | | | **Sous-total** | **7,98 €** | | |
+Le 600 W remplace le 240 W du BOM : avec deux NEMA 23 à 4,2 A crête sous 24 V, 240 W ne suffisent pas.
 
-#### 4.2.5 Visserie
+### 1.4 Roulements
 
-| Référence | Qté requise | Conditionnement | Prix unitaire | Montant payé | Fournisseur | Lien |
-|---|---|---|---|---|---|---|
-| Kit vis + écrous + rondelles M3 (10 / 16 / 25 / 30 mm) | 1 kit | Kit assorti | 14,88 € | **14,88 €** | Amazon | [B0CJ28LJPW](https://www.amazon.fr/dp/B0CJ28LJPW) |
-| Vis M3 × 40 mm | 7 | Lot de 10 | 0,86 € | **8,59 €** | Amazon | ⚠️ Référence indisponible |
-| Kit vis + écrous M4 (10 / 20 / 40 mm) | 1 kit | Kit assorti | 11,99 € | **11,99 €** | Amazon | [B0CX1J8WNS](https://www.amazon.fr/dp/B0CX1J8WNS) |
-| Vis M4 × 45 mm | 4 | Lot de 20 | 0,50 € | **9,95 €** | Amazon | [B09RWWT8W9](https://www.amazon.fr/dp/B09RWWT8W9) |
-| Vis M4 × 55 mm | 4 | Lot de 20 | 0,55 € | **10,95 €** | Amazon | ⚠️ Référence indisponible |
-| Vis M5 × 14 mm (tête cylindrique Allen, inox) | 16 | Lot de 20 | 0,48 € | **9,69 €** | Amazon | [B0DHPFHBRT](https://www.amazon.fr/dp/B0DHPFHBRT) |
-| Vis M8 × 65 mm | 1 | Lot de 8 | 1,75 € | **13,99 €** | Amazon | [B0CTKDFBRL](https://www.amazon.fr/dp/B0CTKDFBRL) |
-| | | | **Sous-total** | **80,04 €** | | |
+Références **standard** : n'importe quelle marque équivalente convient, prenez le moins cher au lot.
 
-> ⚠️ **Deux références ne sont plus disponibles** (M3 × 40 mm et M4 × 55 mm). Ce sont des vis totalement standard, trouvables chez n'importe quel fournisseur de visserie. Les montants sont conservés à titre de référence de coût.
->
-> 💡 **Conseil d'achat :** privilégier les kits assortis M3 / M4 / M5 plutôt que les longueurs à l'unité. Le prix au kit est du même ordre, et on évite trois commandes séparées quand on découvre qu'il manque une longueur en cours de montage.
+| Référence | Dimensions | Qté BOM | Conditionnement acheté | PU (lot) | Total |
+|---|---|---:|---|---:|---:|
+| 608 ZZ | 8 × 22 × 7 mm | 10 | lot de 20 | 7,99 € | 7,99 € |
+| 625 ZZ | 5 × 16 × 5 mm | 8 | lot de 10 | 8,80 € | 8,80 € |
+| 624 ZZ | 4 × 13 × 5 mm | 9 | lot de 10 | 9,20 € | 9,20 € |
+| 623 ZZ | 3 × 10 × 4 mm | 3 | lot de 10 | 9,10 € | 9,10 € |
+| | | | | **Sous-total** | **35,09 €** |
 
-#### 4.2.6 Écrous
+Répartition : 608 ZZ → base rotative 2, épaule 2, coude 2, articulation coude 1, poignet 3. 625 ZZ → base rotative 8. 624 ZZ → tendeurs d'épaule 6, tendeur de coude 3. 623 ZZ → tendeur de poignet 3.
 
-| Référence | Qté requise | Conditionnement | Prix unitaire | Montant payé | Fournisseur | Lien |
-|---|---|---|---|---|---|---|
-| Écrou de blocage (frein) M8 | 1 | Lot | 10,99 € | **10,99 €** | Amazon | ⚠️ Lien à corriger |
-| | | | **Sous-total** | **10,99 €** | | |
+### 1.5 Transmission (tiges, courroies, poulies)
 
+| Élément | Qté BOM | Conditionnement acheté | PU | Total | Lien |
+|---|---:|---|---:|---:|---|
+| Tige filetée M8 × 40 mm inox A2 | 1 | lot de 4 | 6,29 € | 6,29 € | générique — réf. *QUARKZMAN M8×40* |
+| Tige lisse acier ⌀8 mm (à recouper en 140 / 115 / 80 mm) | 3 tronçons | 2 × 200 mm | 7,44 € | 7,44 € | [Amazon.com](https://www.amazon.com/dp/B0BQBX718N) |
+| Courroie T5 ouverte, pas 5 mm, largeur 16 mm (65 / 50 / 35 cm) | 3 | rouleau de 5 m | 31,92 € | 31,92 € | [Amazon.com](https://www.amazon.com/dp/B07NRY8C6X) |
+| Accouplement rigide 5 → 8 mm | 1 | lot de 2 | 7,98 € | 7,98 € | [Amazon.fr](https://www.amazon.fr/dp/B096G1GZH5) |
+| | | | **Sous-total** | **53,63 €** | |
 
-#### 4.2.7 Inserts thermofixés
+Les 5 m de courroie couvrent largement les 150 cm nécessaires (épaule 90 dents, coude 89 dents, en comptant 5 dents enfoncées de chaque côté dans les serre-courroies).
 
-| Référence | Qté requise | Conditionnement | Prix unitaire | Montant payé | Fournisseur | Lien |
-|---|---|---|---|---|---|---|
-| Kit inserts thermofixés M3 / M4 / M5 | 1 kit | Kit assorti | 19,99 € | **19,99 €** | Amazon | [B0DB1T7SM5](https://www.amazon.fr/dp/B0DB1T7SM5) |
-| | | | **Sous-total** | **19,99 €** | | |
+### 1.6 Visserie, écrous et inserts
 
-> Les inserts thermofixés (« heat-set inserts ») sont **non négociables** sur ce projet. Visser directement dans du plastique imprimé, sur des pièces qui subissent le couple d'un NEMA 23, arrache le filetage à la première contrainte. Prévoir un fer à souder avec panne dédiée.
+Le BOM d'origine liste chaque vis à l'unité chez McMaster-Carr. En France, il revient beaucoup moins cher d'acheter des **kits assortis** et quelques lots de longueurs spécifiques.
 
-#### Sous-total mécanique
+| Article acheté | Couvre (quantités BOM) | Qté | PU | Total | Lien |
+|---|---|---|---:|---:|---|
+| Kit 380 inserts thermiques laiton M2→M8 | inserts M3 ×41, M4 ×22, M5 ×16 | 1 kit | 19,99 € | 19,99 € | [Amazon.fr](https://www.amazon.fr/dp/B0DB1T7SM5) |
+| Kit 1110 pcs vis + écrous M3 inox | M3×10 ×20, M3×16 ×10, M3×30 ×1, écrous M3 ×4, rondelles M3 ×7, vis autotaraudeuses M3 ×4 | 1 kit | 14,88 € | 14,88 € | [Amazon.fr](https://www.amazon.fr/dp/B0CJ28LJPW) |
+| Kit 440 pcs vis M4 + écrous + rondelles + clés | M4×10 ×4, M4×20 ×7, M4×40 ×11, rondelles M4 ×12 | 1 kit | 11,99 € | 11,99 € | [Amazon.fr](https://www.amazon.fr/dp/B0CX1J8WNS) |
+| Kit 220 écrous autobloquants M3→M12 | écrous M4 ×14, écrou frein M8 ×1 | 1 kit | 10,99 € | 10,99 € | [Amazon.fr](https://www.amazon.fr/dp/B0CJNMHHJ7) |
+| Vis CHC M8 × 65 mm inox (lot de 8) | M8×65 ×1 | 8 | 13,99 € | 13,99 € | [Amazon.fr](https://www.amazon.fr/dp/B0CTKDFBRL) |
+| Vis CHC M4 × 45 mm inox (lot de 20) | M4×45 ×4 | 20 | 9,95 € | 9,95 € | [Amazon.fr](https://www.amazon.fr/dp/B09RWWT8W9) |
+| Vis CHC M3 × 40 mm inox (lot de 10) | M3×40 ×7 | 10 | 8,59 € | 8,59 € | [Amazon.fr](https://www.amazon.fr/dp/B0DKC7PSML) |
+| Vis CHC M5 × 14 mm inox (lot de 10) | M5×14 ×16 (voir note) | 10 | 7,99 € | 7,99 € | [Amazon.fr](https://www.amazon.fr/dp/B0DHPK62HH) |
+| Vis CHC M5 × 20 mm inox (lot de 10) | complément M5×14 | 10 | 7,69 € | 7,69 € | [Amazon.fr](https://www.amazon.fr/dp/B0DHPFKDFM) |
+| Vis CHC M4 × 60 mm inox (lot de 5) | remplace M4×55 ×4 | 5 | 7,59 € | 7,59 € | [Amazon.fr](https://www.amazon.fr/dp/B0DHPJRRL5) |
+| Vis CHC M3 × 35 mm inox (lot de 5) | remplace M3×25 ×5 | 5 | 7,29 € | 7,29 € | [Amazon.fr](https://www.amazon.fr/dp/B0DHPJKNDC) |
+| | | | **Sous-total** | **120,94 €** | |
 
-| | Montant |
-|---|---|
-| Roulements | 35,09 € |
-| Tiges et arbres | 14,88 € |
-| Courroies | 36,88 € |
-| Accouplements | 7,98 € |
-| Visserie | 80,04 € |
-| Écrous | 10,99 € |
-| Inserts thermofixés | 19,99 € |
-| **Total mécanique** | **205,85 €** |
+**Note M5 :** le BOM demande 16 vis M5×14 (8 pour la base rotative, 8 pour la base d'épaule) mais les lots sont vendus par 10. J'ai complété avec des M5×20 ; c'est fonctionnel, mais pour rester strictement au BOM prenez deux lots de M5×14.
 
----
+**Substitutions :** M4×60 à la place de M4×55 et M3×35 à la place de M3×25 (longueurs indisponibles chez les vendeurs FR). Les deux passent, il faut juste laisser dépasser le filetage ou ajouter une rondelle.
 
-### 4.3 Moteurs et actionneurs
+### 1.7 Non couvert par cette liste
 
-Cette section est la plus instructive de la nomenclature, parce qu'elle contient **deux commandes successives** : celle du tutoriel Instructables, puis celle qui l'a corrigée.
+À prévoir en plus, ces éléments ne figurent pas dans mes commandes en ligne :
 
-#### ⛔ Moteurs achetés puis abandonnés — ne pas racheter
-
-Ces moteurs ont été commandés en suivant le tutoriel Instructables. **Ils ne sont pas assez puissants pour obtenir un bras fiable.** Ils ont été remplacés sur la recommandation d'une personne ayant rencontré exactement le même problème en suivant ce tutoriel.
-
-| Référence | Qté | Caractéristiques | Prix unitaire | Montant payé | Remplacé par |
-|---|---|---|---|---|---|
-| **17HS13-0404S-PG5** | 1 | NEMA 17 + réducteur planétaire 5:1, L = 33 mm, 0,4 A | 26,37 € | **26,37 €** | 17HS24-2104S-PG5 |
-| **23HS30-2804S** | 2 | NEMA 23, 2,00 N·m, 2,8 A, 57 × 57 × 76,5 mm | 17,89 € | **35,78 €** | 23HS45-4204S |
-| | | | **Sous-total perdu** | **62,15 €** | |
-
-> **Ne les commandez pas.** Ces 62,15 € sont le coût de mon erreur de dimensionnement — la seule ligne de cette nomenclature qui soit purement une perte. Si vous refaites le projet, sautez directement aux références du tableau suivant.
-
-#### ✅ Moteurs retenus
-
-| Référence | Qté | Articulation | Caractéristiques | Prix unitaire | Montant payé | Fournisseur | Lien |
-|---|---|---|---|---|---|---|---|
-| **23HS45-4204S** | 2 | Épaule (`Z`) | NEMA 23, **3,0 N·m** (425 oz·in), 4,2 A **peak**, 57 × 57 × 113 mm, 4 fils | 32,16 € | **64,32 €** | StepperOnline | [Fiche](https://www.omc-stepperonline.com/fr/nema-23-bipolaire-3nm-425oz-in-4-2a-57x57x114mm-4-fils-cnc-moteur-pas-a-pas-23hs45-4204s) |
-| **17HS24-2104S-PG5** | 1 | Coude (`Y`) | NEMA 17 + réducteur planétaire **5,18:1**, L = 60 mm, 2,1 A **peak**, couple en sortie de boîte 3–5 N·m | 35,26 € | **35,26 €** | StepperOnline | [Fiche](https://www.omc-stepperonline.com/fr/nema-17-moteur-pas-a-pas-bipolaire-l-60mm-w-rapport-d-engrenage-5-1-boite-de-vitesses-planetaire-17hs24-2104s-pg5) |
-| **17HS24-0644S** | 1 | Base (`X`) | NEMA 17, 65 N·cm (92 oz·in), 0,6 A, 42 × 42 × 60 mm, 4 fils | 12,98 € | **12,98 €** | StepperOnline | [Fiche](https://www.omc-stepperonline.com/fr/nema-17-bipolaire-1-8deg-65ncm-92-05oz-in-0-60a-42x42x60mm-4-fils-17hs24-0644s) |
-| **17HS13-0404S1** | 1 | Poignet 1 (`E0`) | NEMA 17, 26 N·cm (36,8 oz·in), 0,4 A, 42 × 42 × 34 mm, 4 fils | 8,31 € | **8,31 €** | StepperOnline | [Fiche](https://www.omc-stepperonline.com/fr/nema-17-bipolaire-1-8deg-26ncm-36-8oz-in-0-4a-12v-42x42x34mm-4-fils-17hs13-0404s1) |
-| **14HS13-0804S** | 1 | Poignet 2 (`E1`) | NEMA 14, 18 N·cm (25,5 oz·in), 0,8 A, 35 × 35 × 34,8 mm, 4 fils | 8,31 € | **8,31 €** | StepperOnline | [Fiche](https://www.omc-stepperonline.com/fr/nema-14-bipolaire-1-8deg-18ncm-25-5oz-in-0-8a-5-74v-35x35x34mm-4-fils-14hs13-0804s) |
-| **Hitec HS-645MG** | 1 | Pince | Servo à engrenages métalliques, 2 roulements à billes, couple élevé | 30,25 € | **30,25 €** 🇺🇸 | Amazon US | [B003T6RSVQ](https://www.amazon.com/dp/B003T6RSVQ) |
-| | | | | **Sous-total retenu** | **159,43 €** | | |
-
-#### Sous-total moteurs
-
-| | Montant |
-|---|---|
-| Moteurs retenus | 159,43 € |
-| Moteurs abandonnés (dépense réelle, non réutilisable) | 62,15 € |
-| **Total moteurs — dépense réelle** | **221,58 €** |
-| **Total moteurs — pour refaire le projet** | **159,43 €** |
+| Élément | Qté BOM | Remarque |
+|---|---:|---|
+| Poulies T5 : alésage 8 mm ×2, 1/4" ×1, 5 mm ×1 | 4 | achetées en boutique ([Letmeknow](https://letmeknow.fr), Paris) — vérifiez l'alésage face à vos arbres moteur |
+| Contreplaqué 16" × 16" × 0,75" (≈ 400 × 400 × 19 mm) | 1 | découpe locale |
+| Filament d'impression (ABS) | — | env. 2 kg pour l'ensemble des pièces |
 
 ---
 
-### 4.4 Électronique, drivers et alimentation
+## 2. Récapitulatif par commande
 
-| Référence | Qté | Rôle | Prix unitaire | Montant payé | Fournisseur | Lien |
-|---|---|---|---|---|---|---|
-| **Arduino Mega 2560** | 1 | Microcontrôleur, exécute Marlin | 49,19 € | **49,19 €** | Amazon | [B0046AMGW0](https://www.amazon.fr/dp/B0046AMGW0) |
-| **RAMPS 1.4** | 1 | Shield de contrôle 5 axes | 9,99 € | **9,99 €** | Amazon | [B07BSRS9WS](https://www.amazon.fr/dp/B07BSRS9WS) |
-| Câble USB 2.0 type B | 1 | Liaison PC ↔ Arduino (Pronterface) | 7,75 € | **7,75 €** | Amazon | [B07L4KTXQR](https://www.amazon.fr/dp/B07L4KTXQR) |
-| **Driver TB6560** | 4 achetés | Moteurs faible courant (base, coude, poignets) — max 3 A | 11,99 € | **47,96 €** | Amazon | [B07DK7CZK3](https://www.amazon.fr/dp/B07DK7CZK3) |
-| **Driver TB6600** | 2 | Moteurs NEMA 23 de l'épaule — max 4 A | 14,99 € | **29,98 €** | Amazon | [B07YJD5QZ9](https://www.amazon.fr/dp/B07YJD5QZ9) |
-| **Driver DM542T** | 2 | Tentative de montée en gamme sur l'axe `Z` — max 4,5 A peak / 3,2 A RMS | 21,58 € | **43,16 €** | StepperOnline | [Fiche](https://www.omc-stepperonline.com/fr/pilote-numerique-pas-a-pas-1-0-4-2a-20-50vdc-pour-nema-17-23-24-moteur-pas-a-pas-dm542t) |
-| **Alimentation 24 V DC / 25 A / 600 W** | 1 | Alimentation principale des drivers | 29,99 € | **29,99 €** | Amazon | [B0BQJMSHVH](https://www.amazon.fr/dp/B0BQJMSHVH) |
-| Câble secteur avec bornes, 230 V / 16 A | 1 | Raccordement de l'alimentation | 9,79 € | **9,79 €** | Amazon | [B0CZNTJWZR](https://www.amazon.fr/dp/B0CZNTJWZR) |
-| Convertisseur DC-DC 24 V → 12 V / 3 A | 1 | Alimentation logique de la RAMPS | 12,72 € | **12,72 €** | Amazon | [B07PP5JJB6](https://www.amazon.fr/dp/B07PP5JJB6) |
-| Module step-down réglable LM2596 | 1 | Rail auxiliaire réglable | 5,00 € | **5,00 €** | Letmeknow (Paris) | — |
-| Ventilateur 24 V DC, 0,96 W, 80 × 80 × 25 mm | 1 | Refroidissement drivers | 8,22 € | **8,22 €** | Amazon | [B07B665FMH](https://www.amazon.fr/dp/B07B665FMH) |
-| Ventilateurs 50 × 50 × 10 mm | 2 (lot) | Refroidissement ponctuel | 3,39 € | **6,79 €** | Amazon | [B0CTMPNKV8](https://www.amazon.fr/dp/B0CTMPNKV8) |
-| | | | **Sous-total** | **260,54 €** | | |
+| # | Commande | Fournisseur | Articles | Port / TVA / frais | Total payé |
+|---:|---|---|---:|---:|---:|
+| 1 | Roulements, drivers TB6560/TB6600, alim 24 V, coupleur, tige M8, inserts, ventilateurs 50 mm | Amazon.fr | 193,86 € | 0,00 €¹ | **193,86 €** |
+| 2 | Moteurs (NEMA 23 ×2, planétaire, NEMA 17 ×2, NEMA 14) | StepperOnline (Chine) | 91,76 € | 45,48 € (FedEx) | **137,23 €** |
+| 3 | Moteurs de remplacement + drivers DM542T ×2 | StepperOnline (Allemagne) | 142,73 € | 20,99 € (DHL + emballage) | **163,72 €** |
+| 4 | Arduino Mega 2560, RAMPS 1.4, câble USB | Amazon.fr | 67,83 € | 0,01 €¹ | **67,83 €** |
+| 5 | Visserie, écrous, kits M3/M4 | Amazon.fr | 100,95 € | 0,00 €¹ | **100,95 €** |
+| 6 | Ventilateur Sunon 80 mm 24 V | Amazon.fr | 8,22 € | 0,00 € | **8,22 €** |
+| 7 | Convertisseur Garosa 24→12 V (non utilisé) | Amazon.fr | 10,51 € | 0,00 € | **10,51 €** |
+| 8 | 2ᵉ kit 380 inserts (doublon) | Amazon.fr | 19,99 € | 0,00 € | **19,99 €** |
+| 9 | Tiges lisses acier 8 × 200 mm ×2 | Amazon.com | 7,44 € | 21,88 € | **29,32 €** |
+| 10 | Courroie T5 ouverte 5 m, largeur 16 mm | Amazon.com | 31,92 € | 15,51 € | **47,43 €** |
+| 11 | Servo Hitec HS-645MG | Amazon.com | 29,94 € | 24,81 € | **54,75 €** |
+| 12 | Convertisseur LM2596 | achat local | 5,00 € | 0,00 € | **5,00 €** |
+| | | | | **TOTAL** | **838,81 €** |
 
+¹ Frais de livraison intégralement compensés par un bon de réduction sur ces trois commandes.
+
+**Deux pièges à éviter :**
+
+- **Commandes Amazon.com (9, 10, 11).** Port + TVA + frais de change = **62,20 € pour 69,30 € d'articles**, soit presque autant que la marchandise. Si vous trouvez ces trois références en Europe, faites-le : c'est le poste où j'ai le plus perdu.
+- **Entrepôt StepperOnline.** La commande #2 partait de Chine (45,48 € de FedEx), la #3 d'Allemagne (20,99 € DHL, sans dédouanement). Sélectionnez systématiquement l'entrepôt européen.
 
 ---
 
-### 4.5 Récapitulatif des coûts
+## 3. Budget de construction (sans mes erreurs d'achat)
 
-Tous les montants ci-dessous ont été **recalculés ligne par ligne** à partir des tableaux précédents.
-
-#### Dépense réelle sur le projet
+C'est le budget à retenir si vous partez directement sur les bons composants.
 
 | Poste | Montant |
-|---|---|
-| Mécanique (roulements, tiges, courroies, visserie, inserts) | 205,85 € |
-| Moteurs et actionneurs | 221,58 € |
-| Électronique, drivers, alimentation | 260,54 € |
-| **TOTAL DÉPENSÉ (hors filament)** | **687,97 €** |
+|---|---:|
+| Moteurs | 159,12 € |
+| Drivers et commande | 164,94 € |
+| Alimentation et refroidissement | 59,79 € |
+| Roulements | 35,09 € |
+| Transmission (tiges, courroie, accouplement) | 53,63 € |
+| Visserie, écrous et inserts | 120,94 € |
+| **Total articles — hors frais de livraison** | **593,51 €** |
+| Frais de port, TVA et frais de change | 83,18 € |
+| **Total articles — frais de livraison inclus** | **676,69 €** |
 
-#### Coût pour refaire le projet aujourd'hui
-
-En repartant de zéro avec le bénéfice de l'expérience — donc sans les deux références de moteurs sous-dimensionnées, et sans les DM542T qui n'ont pas fonctionné :
-
-| Poste | Montant | Écart |
-|---|---|---|
-| Mécanique | 205,85 € | — |
-| Moteurs (références retenues uniquement) | 159,43 € | − 62,15 € |
-| Électronique (sans les DM542T) | 217,38 € | − 43,16 € |
-| **TOTAL POUR REFAIRE** | **582,66 €** | **− 105,31 €** |
-
-Et en remplaçant l'Arduino Mega officiel par un clone à ~18 € : **environ 551 €**.
-
-#### Note sur le total de 579,37 € annoncé dans mes premières notes
-
-Ce chiffre circulait dans mes notes de projet. **Il est obsolète et ne doit plus être utilisé.** La vérification permet de le reconstituer exactement :
-
-```
-Total actuel de la nomenclature complète        727,10 €
-  − Drivers DM542T          (2 × 21,58 €)      − 43,16 €
-  − Moteurs 23HS45-4204S    (2 × 32,16 €)      − 64,32 €
-  − Moteur 17HS24-2104S-PG5                    − 35,26 €
-  − Module step-down LM2596                     − 5,00 €
-                                             ───────────
-                                                579,36 €   ← à 1 centime d'arrondi près
-```
-
-**Conclusion :** 579,37 € était le total **avant** la seconde commande de moteurs, l'achat des DM542T et l'ajout du LM2596. C'est un instantané correct à une date donnée, pas une erreur de calcul — mais il sous-estime le coût réel de 108,60 €.
-
-#### Réconciliation complète des totaux
-
-Pour lever toute ambiguïté, voici les trois chiffres qui peuvent légitimement circuler et ce que chacun signifie :
-
-| Chiffre | Signification | À utiliser pour |
-|---|---|---|
-| **727,10 €** | Somme brute de toutes les lignes de la nomenclature d'origine, **doublons inclus** | Rien — ce total contient deux articles comptés deux fois |
-| **687,97 €** | Dépense réelle, doublons retirés | Répondre à « combien ça t'a coûté ? » |
-| **582,66 €** | Coût de reconstruction optimisé | Répondre à « combien ça me coûterait ? » |
+À ajouter selon vos sources : poulies T5 (×4), contreplaqué de base, filament.
 
 ---
 
-### 4.6 Anomalies relevées et corrections apportées
+## 4. Annexe — coût de mon erreur de dimensionnement
 
-Cette section documente **toutes** les erreurs trouvées lors de la révision de ma nomenclature d'origine. Elle est là par honnêteté, et parce que ce sont des pièges très faciles à reproduire quand on tient une liste d'achats sur plusieurs mois.
+*Cette partie n'entre pas dans le budget ci-dessus. Elle est là pour justifier l'écart avec ce que j'ai réellement dépensé, et pour vous éviter la même dépense.*
 
-| # | Anomalie | Impact | Correction |
-|---|---|---|---|
-| **1** | **Total obsolète** — 579,37 € annoncé | Sous-estimation de **108,60 €** | Total recalculé : 687,97 € en dépense réelle. Origine de l'écart identifiée et documentée en [§4.5](#45-récapitulatif-des-coûts) |
-| **2** | **Doublon — tiges d'acier ⌀8 × 200 mm** listées dans deux rubriques (« Tiges » à 8,59 € et « Tiges en acier » à 7,39 €), même référence `B0BQBX718N` | Surestimation de **7,39 €** | Une seule ligne conservée, à 8,59 € (montant facturé) |
-| **3** | **Doublon — courroie T5** listée dans deux rubriques (« Ceintures » à 36,88 € et « Courroie de distribution » à 31,74 €), même référence `B07NRY8C6X` | Surestimation de **31,74 €** | Une seule ligne conservée, à 36,88 €. Un seul rouleau de 5 m a été acheté |
-| **4** | **Lien produit erroné** — l'écrou de blocage M8 et le kit de visserie M3 pointent vers la même référence `B0CJ28LJPW`, à deux prix différents | Aucun impact sur le total | Signalé dans le tableau. Lien à retrouver sur la facture |
-| **5** | **Devises mélangées** — plusieurs articles commandés sur `amazon.com` en USD, reportés comme des euros | Léger biais sur le total, sens indéterminé | Articles marqués 🇺🇸. Ligne d'action : basculer sur des références EU |
-| **6** | **Colonnes mal comprises** — la colonne « coût total » de mes notes contenait le **prix du lot**, pas `quantité × prix unitaire` | Aucun impact sur le total, mais illisible | Colonnes séparées et explicitées en [§4.1](#41-comment-lire-ces-tableaux) |
-| **7** | **Deux références indisponibles** — vis M3 × 40 mm et M4 × 55 mm | Aucun | Signalé. Ce sont des vis standard, trouvables partout |
-| **8** | **Quantité TB6560 ambiguë** — noté « 4 2 » dans mes notes | Aucun | Le montant payé (47,96 €) correspond sans ambiguïté à **4 unités** à 11,99 €. Toutes ne sont pas montées sur le bras |
+J'ai d'abord commandé les moteurs du BOM d'origine. Ils se sont révélés trop faibles (décrochage de l'épaule, pertes de pas au coude), ce qui m'a obligé à repasser une commande complète avec des moteurs plus puissants — et donc aussi des drivers plus capables (DM542T à la place des TB6560 pour l'épaule). S'y ajoutent deux achats en doublon.
 
-**Les deux doublons (#2 et #3) se compensent partiellement avec le total obsolète (#1)**, ce qui explique pourquoi l'erreur n'avait pas sauté aux yeux : la somme brute des lignes (727,10 €) et le total annoncé (579,37 €) étaient tous les deux faux, dans des directions différentes.
+| Article inutile | Qté | PU | Total | Cause |
+|---|---:|---:|---:|---|
+| NEMA 23 `23HS30-2804S` (1,26 Nm, 2,8 A) | 2 | 17,89 € | 35,79 € | sous-dimensionné, remplacé par le `23HS45-4204S` |
+| NEMA 17 planétaire `17HS13-0404S-PG5` (0,4 A) | 1 | 26,37 € | 26,37 € | sous-dimensionné, remplacé par le `17HS24-2104S-PG5` |
+| Driver TB6560 DollaTek 3 A | 2 | 11,99 € | 23,98 € | rendus inutiles par le passage aux DM542T sur l'épaule |
+| Kit 380 inserts thermiques | 1 | 19,99 € | 19,99 € | commandé deux fois |
+| Convertisseur Garosa 24 → 12 V 3 A | 1 | 10,51 € | 10,51 € | remplacé par un LM2596 à 5 € |
+| **Sous-total articles** | | | **116,64 €** | |
+| Frais FedEx de la commande StepperOnline #1 | | | 45,48 € | une seule commande depuis l'Allemagne aurait suffi |
+| **Surcoût total de l'erreur** | | | **162,12 €** | |
 
----
+### Bilan
 
-### 4.7 Coût du filament
+| | Montant |
+|---|---:|
+| Budget de construction (partie 3) | 676,69 € |
+| Surcoût de l'erreur de dimensionnement | 162,12 € |
+| **Total réellement dépensé** | **838,81 €** |
 
-Le filament n'est **pas** inclus dans les totaux ci-dessus, parce qu'il dépend trop du matériau et des réglages :
-
-| Paramètre | Fourchette |
-|---|---|
-| Coût total du plastique | **100 € à 200 €** |
-| Facteurs de variation | Type de filament (PLA / PETG / ABS), taux de remplissage, nombre de réimpressions après échec |
-
-**Budget total réaliste du projet, filament compris : 690 € à 890 €.**
-
-Voir [§7](#7-impression-3d) pour le détail des matériaux et les échecs d'impression rencontrés.
-
+Soit **24 % de dépense en plus** pour un bras identique. Le message est simple : ne suivez pas les références de moteurs du BOM d'origine, prenez celles de la partie 1.1 dès la première commande, et regroupez tout chez StepperOnline en une seule expédition depuis l'entrepôt européen.
 ---
 
 ## 5. Choix de la motorisation
