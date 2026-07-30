@@ -50,11 +50,11 @@ Le projet a démarré **fin septembre 2025** et s'est étalé sur plusieurs mois
 
 ### 1.2 Objectifs
 
-Trois objectifs, dans l'ordre où ils comptent pour moi :
+Trois objectifs :
 
-1. **Acquérir des compétences hardware réelles.** Passer de la théorie robotique enseignée en cours à un système physique qu'il faut alimenter, câbler, régler et déboguer. Un moteur qui ne tourne pas ne se corrige pas avec un `print()`.
-2. **Constituer une pièce de portfolio complète.** Pouvoir démontrer, CV en main, la capacité à mener un projet robotique de bout en bout — mécanique, électronique, firmware, logiciel — dans la perspective d'un recrutement en entreprise du secteur robotique.
-3. **Disposer d'une plateforme matérielle pour la suite.** Une fois le bras opérationnel, l'utiliser comme support pour implémenter les notions vues en cours de robotique : cinématique directe et inverse, planification de trajectoire, commande, éventuellement apprentissage.
+1. **Acquérir des compétences hardware réelles.** Passer de la théorie robotique enseignée en cours à un système physique qu'il faut alimenter, câbler, régler et déboguer.
+2. **Constituer une pièce de portfolio complète.** Pouvoir démontrer, la capacité à mener un projet robotique de bout en bout — mécanique, électronique, firmware, logiciel — dans la perspective d'un recrutement en entreprise du secteur robotique.
+3. **Disposer d'une plateforme matérielle pour la suite.** Une fois le bras opérationnel, l'utiliser comme support pour implémenter les notions vues en cours de IA pour la robotique.
 
 ### 1.3 Ce que ce fork ajoute
 
@@ -62,7 +62,7 @@ Le dépôt amont fournit les fichiers du projet. Ce fork y ajoute :
 
 | Apport | Détail |
 |---|---|
-| **Nomenclature réelle vérifiée** | Prix effectivement payés, fournisseurs européens, arithmétique recalculée, anomalies documentées |
+| **Nomenclature réelle vérifiée** | Prix effectivement payés |
 | **Schémas de câblage** | Aucun schéma driver ↔ RAMPS 1.4 n'existait pour ce projet ; ils ont été reconstitués à partir des datasheets |
 | **Justification de la motorisation** | Pourquoi les moteurs du BOM d'origine et du tutoriel Instructables sont sous-dimensionnés, et par quoi les remplacer |
 | **Réglages de drivers** | Positions de DIP switches, courants peak/RMS, microstepping, pour TB6560, TB6600 et DM542T |
@@ -78,10 +78,9 @@ Le dépôt amont fournit les fichiers du projet. Ce fork y ajoute :
 | Octobre 2025 | Reconstitution du schéma électrique, recherche des composants |
 | Octobre 2025 | Blocage sur l'approvisionnement des moteurs du BOM d'origine → bascule sur le tutoriel Instructables |
 | Automne 2025 | Commande et réception des composants, premiers essais électriques sur un moteur isolé |
-| Automne–hiver 2025 | Impressions 3D au FabLab (ABS, PETG), échecs et reprises |
+| Automne–hiver 2025 | Impressions 3D au FabLab (PLA, PETG), échecs et reprises |
 | Hiver 2025–2026 | Constat de sous-dimensionnement des moteurs → seconde commande |
-| Mai 2026 | Poulies personnalisées OpenSCAD (méplat en D) |
-| Mai–juin 2026 | Campagne de diagnostic sur les drivers DM542T de l'axe Z |
+| Mai 2026 | Poulies personnalisées OpenSCAD |
 | Juin 2026 | Diagnostic des pertes de pas du coude |
 | Juillet 2026 | Rédaction de cette documentation |
 
@@ -94,14 +93,7 @@ Le dépôt amont fournit les fichiers du projet. Ce fork y ajoute :
 - **Site officiel BCN3D MOVEO** — présentation du projet et téléchargement des fichiers
 - **[GitHub BCN3D/BCN3D-Moveo](https://github.com/BCN3D/BCN3D-Moveo)** — dépôt officiel
 
-Deux documents de ce dépôt sont indispensables avant de commencer :
-
-| Fichier | Contenu | Pourquoi le lire d'abord |
-|---|---|---|
-| `BCN3D Moveo BOM.pdf` | Nomenclature complète des composants | Donne la liste de référence, même si elle n'est pas approvisionnable telle quelle en Europe pour un particulier |
-| `User Manual BCN3D Moveo.pdf` | Manuel d'assemblage complet et précis | Reste la meilleure référence pour l'ordre de montage mécanique |
-
-### Variante suivie pour l'approvisionnement
+### Variante suivie pour l'approvisionnement et le montage mécanique
 
 - **[Instructables — Build a Giant 3D Printed Robot Arm](https://www.instructables.com/Build-a-Giant-3D-Printed-Robot-Arm/)** — un particulier propose une alternative au projet initial avec des moteurs plus accessibles, plus simples à obtenir et moins chers. C'est cette liste qui a débloqué l'approvisionnement.
 - **[Toglefritz/Bertram_Robot_Arm](https://github.com/Toglefritz/Bertram_Robot_Arm)** — dépôt accompagnant ce tutoriel, dont ce dépôt est le fork.
@@ -126,12 +118,17 @@ Une RAMPS 1.4 pilote nativement cinq axes : `X`, `Y`, `Z`, `E0` et `E1` (les deu
 
 **Choix important pour ce build :** les drivers pas-à-pas ne sont **pas** les habituels A4988/DRV8825 enfichés sur la RAMPS. Les moteurs retenus demandent trop de courant. On utilise donc des **drivers externes** (TB6560, TB6600, DM542T) alimentés séparément, la RAMPS ne fournissant plus que les signaux logiques `STEP`, `DIR` et `ENABLE`.
 
-### Schéma de câblage générique (un moteur)
+### Schéma de câblage
 
-Aucun schéma de ce type n'existait pour ce projet ; celui-ci a été reconstitué à partir des datasheets.
+Le schéma de lalimentations de driveur :
 
-<!-- IMAGE : schéma de câblage générique RAMPS 1.4 → driver externe → moteur -->
-<!-- Emplacement suggéré : docs/images/cablage-generique.png -->
+<img width="3529" height="2245" alt="Shema_branchement - Page 1" src="https://github.com/user-attachments/assets/041aba9b-2a42-440e-827b-9f0b2f2cb784" />
+
+Le shéma de cablage de l'axe X avec le (17HS13-0404S1) :
+
+<img width="1531" height="1880" alt="Diagramme vierge (3)" src="https://github.com/user-attachments/assets/1f1ad59b-ce78-4137-8293-e2dcba2a8de5" />
+
+
 
 > **Le schéma est identique pour les cinq autres moteurs.** Seules changent les broches `STEP` / `DIR` / `ENABLE` prises sur la RAMPS, et le réglage de courant du driver.
 
