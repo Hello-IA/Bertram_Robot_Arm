@@ -128,10 +128,22 @@ Le shéma de cablage de l'axe X avec le (17HS13-0404S1) :
 
 <img width="1531" height="1880" alt="Diagramme vierge (3)" src="https://github.com/user-attachments/assets/1f1ad59b-ce78-4137-8293-e2dcba2a8de5" />
 
+Le shéma de cablage de l'axe Y avec le (17HS24-2104S-PG5) :
+
+<img width="1856" height="2414" alt="Diagramme vierge (9)" src="https://github.com/user-attachments/assets/f457bfa9-1010-4160-83f0-104f6f00617f" />
+
+Le shéma de cablage de l'axe Z avec le (23HS45-4204S) :
+
+<img width="1831" height="2414" alt="Diagramme vierge (11)" src="https://github.com/user-attachments/assets/5acf17f7-8143-4864-ac61-6b9853d0ae7f" />
+
 Le shéma de cablage de l'axe E0 avec le (17HS24-0644S) :
 
-<img width="1531" height="1880" alt="Diagramme vierge (4)" src="https://github.com/user-attachments/assets/e4c953e7-7538-4777-bb23-114320ec8462" />
+<img width="1856" height="2414" alt="Diagramme vierge (8)" src="https://github.com/user-attachments/assets/99e8b656-0455-4a4c-9029-ee06907c3e92" />
 
+
+Le shéma de cablage de l'axe E1 avec le (14HS13-0804S) :
+
+<img width="1531" height="1880" alt="Diagramme vierge (5)" src="https://github.com/user-attachments/assets/ccd135a1-64cc-4aff-b5c1-ca4251551945" />
 
 
 
