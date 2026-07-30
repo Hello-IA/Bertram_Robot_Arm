@@ -386,6 +386,7 @@ J'ai d'abord commandé les moteurs du BOM d'origine. Ils se sont révélés trop
 | **Total réellement dépensé** | **838,81 €** |
 
 Soit **24 % de dépense en plus** pour un bras identique. Le message est simple : ne suivez pas les références de moteurs du BOM d'origine, prenez celles de la partie 1.1 dès la première commande, et regroupez tout chez StepperOnline en une seule expédition depuis l'entrepôt européen.
+
 ---
 
 ## 5. Choix de la motorisation
