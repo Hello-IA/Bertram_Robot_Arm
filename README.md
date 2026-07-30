@@ -128,9 +128,12 @@ Le shéma de cablage de l'axe X avec le (17HS13-0404S1) :
 
 <img width="1531" height="1880" alt="Diagramme vierge (3)" src="https://github.com/user-attachments/assets/1f1ad59b-ce78-4137-8293-e2dcba2a8de5" />
 
+Le shéma de cablage de l'axe E0 avec le (17HS24-0644S) :
+
+<img width="1531" height="1880" alt="Diagramme vierge (4)" src="https://github.com/user-attachments/assets/e4c953e7-7538-4777-bb23-114320ec8462" />
 
 
-> **Le schéma est identique pour les cinq autres moteurs.** Seules changent les broches `STEP` / `DIR` / `ENABLE` prises sur la RAMPS, et le réglage de courant du driver.
+
 
 ### 3.2 Six moteurs pas-à-pas pour cinq axes
 
@@ -144,16 +147,14 @@ Et c'est là que se cache le piège : les deux moteurs étant montés **face à 
 
 ### 3.3 Attribution des axes RAMPS 1.4
 
-| Axe RAMPS | Articulation | Moteur | Driver | Statut de la documentation |
+| Axe RAMPS | Articulation | Moteur | Driver 
 |---|---|---|---|---|
-| `X` | Rotation de la base | 17HS24-0644S (NEMA 17, 65 N·cm, 0,6 A) | TB6560 | ⚠️ Affectation déduite — à confirmer |
-| `Y` | **Coude** | 17HS24-2104S-PG5 (NEMA 17 + réducteur 5,18:1) | TB6560 | ✅ Documenté — [§8.2](#82-coude--axe-y) |
-| `Z` | **Épaule** | 2 × 23HS45-4204S (NEMA 23, 3 N·m) | 2 × TB6600 | ✅ Documenté — [§8.1](#81-épaule--axe-z) |
-| `E0` | **Poignet 1** (rotation avant-bras) | 17HS13-0404S1 (NEMA 17, 26 N·cm, 0,4 A) | TB6560 | ✅ Documenté — [§8.3](#83-avant-bras-et-poignet-1) |
-| `E1` | Poignet 2 | 14HS13-0804S (NEMA 14, 18 N·cm, 0,8 A) | TB6560 | ⚠️ Affectation déduite — à confirmer |
-| — | Pince | Servo Hitec HS-645MG | Sortie servo RAMPS | 🔲 À documenter |
-
-> Les deux lignes marquées ⚠️ correspondent à des moteurs achetés et présents dans la nomenclature, mais dont l'affectation n'a pas encore été consignée pendant le montage. Le raisonnement retenu est le couple disponible : le moteur NEMA 17 le plus puissant sans réducteur (65 N·cm) va à la base, le plus petit (NEMA 14, 18 N·cm) au poignet le plus distal.
+| `X` |  **Poignet 1** (rotation avant-bras) | 17HS13-0404S1 (NEMA 17, 26 N·cm, 0,4 A) | TB6560 
+| `Y` | **Coude** | 17HS24-2104S-PG5 (NEMA 17 + réducteur 5,18:1) | TB6600 
+| `Z` | **Épaule** | 2 × 23HS45-4204S (NEMA 23, 3 N·m) | 2 × DM542T
+| `E0` | Rotation de la base | 17HS24-0644S (NEMA 17, 60 N·cm, 0,6 A)   | TB6600 
+| `E1` | Poignet 2 | 14HS13-0804S (NEMA 14, 18 N·cm, 0,8 A) | TB6560 
+| — | Pince | Servo Hitec HS-645MG | Sortie servo RAMPS | Pince |
 
 ### 3.4 Arborescence de l'alimentation
 
